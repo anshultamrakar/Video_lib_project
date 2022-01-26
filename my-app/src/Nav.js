@@ -1,39 +1,25 @@
-import { useState } from "react"
-import {  FaBars } from "react-icons/fa";
-import {  AiOutlineClose } from "react-icons/ai";
-// import {Link} from "react-router-dom"
-import { SidebarData } from "./SidebarData";
 
 const Nav = () => {
-  const [sideBar , setSideBar ] = useState(false)
 
-  const showMenuBar = () => {
-    setSideBar(!sideBar)
-  }
   return (
-    <>
-    <div className="navbar">
-      <li className="menu-bars">   
-      <FaBars onClick={showMenuBar}/>
-      </li>
-     
-    </div>
-    <nav className= {sideBar ? "nav-menu-active" : 'nav-menu'}>
-        <ul className="nav-menu-items">
-          <li className="navbar-toggles">
-            <AiOutlineClose/>
-            </li>
-          {SidebarData.map((item) => (
-            <li className= {item.cName}>
-             {item.icon}
-             <span>{item.title}</span>
-              
-            </li>
-          ))}
-        </ul>
+    <nav className = "Nav">
+     <form className ="searchForm" onSubmit = {(e) => e.preventDefault()}>
+       <label> Search </label>
+       <input
+       type = "text"
+       placeholder = "Search"
+       onchange = {(e) => console.log(e.target.value)}
+       />
+     </form>
+     <ul className = "nav__list">
+       <li className = "list-items"> Home </li>
+       <li className = "list-items"> History </li>
+       <li className = "list-items"> Playlist </li>
+       <li className = "list-items"> Watch Later</li>
+       <li className = "list-items"> Liked Videos</li>
+     </ul>
     </nav>
-  </>
   )
-};
+}
 
 export default Nav;
