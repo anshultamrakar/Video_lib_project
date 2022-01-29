@@ -1,7 +1,7 @@
-const Header = () => {
+const Header = ({title}) => {
   return(
      <header className="Header">
-        <h1> Vidly Application</h1>
+        <h1> {title}</h1>
      </header>
   )
   

@@ -1,3 +1,9 @@
+import { BsFillHouseDoorFill } from "react-icons/bs";
+import { AiOutlineHistory } from "react-icons/ai";
+import { AiFillLike} from "react-icons/ai";
+import { MdOutlineWatchLater, MdPlaylistAddCheck } from "react-icons/md";
+import { Link } from "react-router-dom";
+
 
 const Nav = () => {
 
@@ -8,15 +14,15 @@ const Nav = () => {
        <input
        type = "text"
        placeholder = "Search"
-       onchange = {(e) => console.log(e.target.value)}
+    
        />
      </form>
      <ul className = "nav__list">
-       <li className = "list-items"> Home </li>
-       <li className = "list-items"> History </li>
-       <li className = "list-items"> Playlist </li>
-       <li className = "list-items"> Watch Later</li>
-       <li className = "list-items"> Liked Videos</li>
+       <li className = "list-items"> <Link className="icons" to = "">< BsFillHouseDoorFill/></Link></li>
+       <li className = "list-items"> <Link className="icons" to = "video">< AiOutlineHistory/></Link></li>
+       <li className = "list-items"> <Link className="icons" to = "later"><MdOutlineWatchLater/></Link> </li>
+       <li className = "list-items"> <Link className="icons" to = "playlist"><MdPlaylistAddCheck/></Link></li>
+       <li className = "list-items"> <Link className="icons" to = "liked">< AiFillLike/> </Link></li>
      </ul>
     </nav>
   )
