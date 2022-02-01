@@ -1,14 +1,15 @@
 import ReactPlayer from 'react-player/youtube'
 
-const LikedVideo = ({likedList}) => {
+const LikedVideo = ({likedList, removeVideo}) => {
 
   return (
     <main className='likedVideo'>
+
       {
-        likedList.map((item) => (
+         likedList.map((item) => (
           <li key = {item.id}>
             <div className='float-btn'>
-            <button  className='cross-btn ' onClick={() => removeBtn()}> x </button>
+            <button  className='cross-btn ' onClick={() => removeVideo(item.id)}> x </button>
             </div>
             <div className='player-wrapper'>
             <ReactPlayer className = "react-player" width="100%"
@@ -20,6 +21,7 @@ const LikedVideo = ({likedList}) => {
           </li>
         ))
       }
+ 
     </main>
   )
 };

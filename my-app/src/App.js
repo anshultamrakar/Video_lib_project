@@ -85,12 +85,45 @@ function App() {
 ])
 
 const [likedList , setLikedList] = useState([])
+const [watchedLater , setaWatchedLater] = useState([]);
+const [videoTitle , setVideoTitle] = useState('');
+const [videoBody , setVideoBody] = useState('')
+const [playList , setPlayList ] = useState([])
+
+
+
+
+ const handlePost = (e) => {
+  e.preventDefault();
+  const id = playList.length ? videos[videos.length - 1].id + 1 : 1;
+  const newVideo = {id , title : videoTitle , body : videoBody}
+  const allVideo = [...playList, newVideo]
+  setPlayList(allVideo)
+  setVideoTitle('')
+  setVideoBody('')
+}
+
+
+
 
 const handleLikeList = (item) => {
   setLikedList([...likedList , item])
 }
 
+const handleWatchLater = (item) => {
+  setaWatchedLater([...watchedLater , item])
+}
 
+
+const removeVideo = (id) => {
+ const removedVideo = likedList.filter((item) => item.id !== id);
+ setLikedList(removedVideo)
+}
+
+const removeLater = (id) => {
+  const removedLater = watchedLater.filter((item) => item.id !== id)
+  setaWatchedLater(removedLater)
+}
 
   return (
     <div className='App'>
@@ -98,12 +131,15 @@ const handleLikeList = (item) => {
       <Route path = "/" element = {<Layout/>}>
         <Route index element = {<Home videos = {videos}/>} />
         <Route path = "video">
-        <Route index element = {<WatchHistory/>}/>
-        <Route path = ":id" element = {<PlayerPage videos={videos} handleLikeList = {handleLikeList} />}/>
+        <Route index element = {<WatchHistory />}/>
+        <Route path = ":id" element = {<PlayerPage videos={videos} handleLikeList = {handleLikeList}  handleWatchLater={handleWatchLater}
+        videoTitle = {videoTitle} setVideoTitle = {setVideoTitle} videoBody = {videoBody} setVideoBody = {setVideoBody} 
+        handlePost = {handlePost}
+        />}/>
         </Route>
-        <Route path = "later" element = {<WatchLater/>}/>
-        <Route path = "playlist" element = {<PlayList/>}/>
-        <Route path = "liked" element = {<LikedVideo likedList={likedList} />}/>
+        <Route path = "later" element = {<WatchLater watchedLater = {watchedLater} removeLater = {removeLater}/>}/>
+        <Route path = "playlist" element = {<PlayList playList = {playList}/>}/>
+        <Route path = "liked" element = {<LikedVideo likedList={likedList} removeVideo = {removeVideo} />}/>
         <Route path = "*" element = {<Missing/>}/>
       </Route>
       </Routes>
@@ -113,8 +149,4 @@ const handleLikeList = (item) => {
 
 export default App;
 
-// Home
-// WatchHistory
-// Watch Latter 
-// PlayList 
-// Liked button 
+

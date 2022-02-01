@@ -189,17 +189,10 @@ main{
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 5rem; 
+  grid-gap: 50px;
+
 }
 
-button {
-  /* font-size: 1rem;
-  width: 100px;
-  padding: 1em;
-  margin: 0.25em;
-  border-radius: 0.5em;
-  display: grid;
-  place-content: center; */
-}
 
 section {
   display: flex;
@@ -230,7 +223,68 @@ section {
   top : -30px;
 }
 
+.playerBtn{
+  display: flex;
+  background-color: #333;
+  flex-direction: row;
+  justify-content: space-around;
+  gap : 50px;
+  font-size: 50px;
+}
 
+.btns{
+  font-size: 2rem;
+}
+.btn:hover , .btn:focus {
+  background-color: #eee;
+  color: #333;
+}
+
+.NewPlayList{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.postBody {
+  margin: 1rem 0;
+}
+
+.newPostForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.newPostForm label {
+  margin-top: 1rem;
+}
+
+.newPostForm input[type='text'], 
+.newPostForm textarea {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  outline: none;
+}
+
+.newPostForm textarea {
+  height: 100px;
+}
+
+.newPostForm button {
+  margin-top: 1rem;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
 
 
 

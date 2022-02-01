@@ -1,7 +1,9 @@
+
+
 const WatchHistory = () => {
   return(
         <main>
-            <h2> This is  History section </h2>
+              <h2>This is History </h2>
         </main>
   )
 };
