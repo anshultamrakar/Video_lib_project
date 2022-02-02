@@ -1,11 +1,10 @@
 import {Link, useParams} from 'react-router-dom'
-import NewPlayList from './NewPlayList';
 import ReactPlayer from 'react-player/youtube'
 import { AiFillLike} from "react-icons/ai";
 import { MdOutlineWatchLater, MdPlaylistAddCheck } from "react-icons/md"
 
 
-const PlayerPage = ({videos, handleLikeList, handleWatchLater, videoTitle , setVideoTitle , videoBody , setVideoBody , handlePost}) => {
+const PlayerPage = ({videos, handleLikeList, handleWatchLater}) => {
 
   const {id} = useParams();
   const item = videos.find(item => (item.id).toString() === id)
@@ -27,13 +26,6 @@ const PlayerPage = ({videos, handleLikeList, handleWatchLater, videoTitle , setV
           </>
         }
       </article>
-      <div>
-        <NewPlayList videoTitle = {videoTitle} setVideoTitle = {setVideoTitle} videoBody = {videoBody} setVideoBody = {setVideoBody} 
-        handlePost = {handlePost}/>
-      </div>
-
-
-   
     </main>
   )
 

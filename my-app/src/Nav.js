@@ -5,7 +5,7 @@ import { MdOutlineWatchLater, MdPlaylistAddCheck } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 
-const Nav = () => {
+const Nav = ({search , setSearch}) => {
 
   return (
     <nav className = "Nav">
@@ -14,7 +14,8 @@ const Nav = () => {
        <input
        type = "text"
        placeholder = "Search"
-    
+       value = {search}
+       onChange={(e) => setSearch(e.target.value)}
        />
      </form>
      <ul className = "nav__list">

@@ -1,15 +1,8 @@
-const PlayList = ({playList}) => {
+const PlayList = () => {
   return (
     <main className="">
-        {
-          playList.map((item) => (
-            <li key = {item.id}>
-            <h1>{item.title}</h1>
-            <p>{item.body}</p>
-            </li>
-          ))
-        }
-    </main>
+       <h2> This is playList</h2>
+    </main> 
   )
  
 };
