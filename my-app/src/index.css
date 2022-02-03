@@ -122,8 +122,6 @@ Link:hover {
   grid-template-columns: 1fr 1fr 1fr  1fr ;
 }
 
-
-
 .Home{
   display: flex;
   margin-bottom: 100px;
@@ -139,8 +137,6 @@ Link:hover {
   background-color: #fff;
 }
 
-
-
 .player-wrapper {
   position: relative;
   padding-top: 56.25%; 
@@ -152,12 +148,9 @@ Link:hover {
   left: 0;
 }
 
-
 main{
   min-height: 100vh;
 }
-
-
 
 .videoList {
   position: relative;
@@ -245,8 +238,6 @@ section {
   flex-direction: column;
 }
 
-
-
 .postBody {
   margin: 1rem 0;
 }
@@ -286,9 +277,25 @@ section {
   cursor: pointer;
 }
 
+.watchHistory{
+  display: grid;
+  list-style: none;
+  row-gap: 80px;
+  width: 100%;
+  justify-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
 
-
-
+.playList{
+  width: 100%;
+  list-style: none;
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #fff;
+}
 
 @media only screen and (min-width: 610px) {
   

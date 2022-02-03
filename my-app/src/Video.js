@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import ReactPlayer from 'react-player/youtube'
 
+
 const Video = ({item}) => {
+  
   return(
     <article className='videoList'>
         <li>

@@ -1,7 +1,18 @@
+import { useContext } from "react";
+import DataContext from "./Context/DataContext";
 const PlayList = () => {
+const {playList,setPlayList} = useContext(DataContext)
   return (
-    <main className="">
-       <h2> This is playList</h2>
+    <main className="playList">
+   {
+    playList.map((item) => (
+      <li key = {item.id}>
+        <h2>{item.title}</h2>
+        <p>{item.description}</p>
+       
+      </li>
+    ))
+   }
     </main> 
   )
  

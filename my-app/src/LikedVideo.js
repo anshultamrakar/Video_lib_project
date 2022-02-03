@@ -1,10 +1,13 @@
 import ReactPlayer from 'react-player/youtube'
+import { useContext } from 'react';
+import DataContext from './Context/DataContext';
 
-const LikedVideo = ({likedList, removeVideo}) => {
+const LikedVideo = () => {
+
+  const {likedList, removeVideo } = useContext(DataContext)
 
   return (
     <main className='likedVideo'>
-
       {
          likedList.map((item) => (
           <li key = {item.id}>

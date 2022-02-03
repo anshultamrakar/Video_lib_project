@@ -5,7 +5,7 @@ const Feed = ({videos}) => {
     <>
         <ul className="video-items">
         {videos.map((item) => (
-           <Video key = {item.id} item={item}/>
+           <Video key = {item.id} item = {item}/>
         ))}
         </ul>
     </>

@@ -3,9 +3,13 @@ import { AiOutlineHistory } from "react-icons/ai";
 import { AiFillLike} from "react-icons/ai";
 import { MdOutlineWatchLater, MdPlaylistAddCheck } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import DataContext from './Context/DataContext';
 
 
-const Nav = ({search , setSearch}) => {
+const Nav = () => {
+
+  const {search, setSearch } = useContext(DataContext)
 
   return (
     <nav className = "Nav">
