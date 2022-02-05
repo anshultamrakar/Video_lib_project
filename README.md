@@ -3,4 +3,4 @@ Video_lib_project made with React JS
 
 Live Project 
 
-videolibraryapp.netlify.app
+https://goofy-mahavira-4513b6.netlify.app/
