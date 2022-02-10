@@ -31,7 +31,7 @@ const Nav = () => {
        <li className = "list-items"> <Link className="icons" to = "later"><MdOutlineWatchLater/></Link> </li>
        <li className = "list-items"> <Link className="icons" to = "playlist"><MdPlaylistAddCheck/></Link></li>
        <li className = "list-items"> <Link className="icons" to = "liked">< AiFillLike/> </Link></li>
-       <li className = "list-items"> <Link className="icons" to = "login"><FaUserAlt/> </Link></li>
+  
      </ul>
     </nav>
   )
