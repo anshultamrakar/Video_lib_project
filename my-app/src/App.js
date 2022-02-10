@@ -5,6 +5,7 @@ import Missing from './Missing';
 import WatchHistory from './WatchHistory';
 import WatchLater from './WatchLater';
 import LikedVideo from './LikedVideo';
+import Login from './Login';
 import PlayList from './PlayList';
 import {Route, Routes} from 'react-router-dom'
 import { DataProvider } from './Context/DataContext';
@@ -25,6 +26,7 @@ function App() {
         <Route path = "later" element = {<WatchLater/>}/>
         <Route path = "playlist" element = {<PlayList/>}/>
         <Route path = "liked" element = {<LikedVideo />}/>
+        <Route path = "login" element = {<Login />}/>
         <Route path = "*" element = {<Missing/>}/>
       </Route>
       </Routes>
