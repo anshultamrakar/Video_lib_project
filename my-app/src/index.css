@@ -297,6 +297,23 @@ section {
   background-color: #fff;
 }
 
+   
+ .registerForm{
+   flex-grow: 1;
+ }
+
+
+   .loginForm{
+     margin-top: 4rem;
+     padding: 1rem 1rem 1rem 1rem ;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     border: 2px solid black;
+   }
+
+
 @media only screen and (min-width: 610px) {
   
   html {

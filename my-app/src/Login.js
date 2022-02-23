@@ -1,88 +1,58 @@
-// import { useState } from "react";
-// import { createUserWithEmailAndPassword , onAuthStateChanged , signOut , signInWithEmailAndPassword} from "firebase/auth";
+import { useContext, useState } from "react"
+import { Link } from "react-router-dom";
+import DataContext from './Context/DataContext'
+import { auth } from "./firebase";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+  
 
-// import { auth } from "./firebase-config";
+const Login = () => {
 
-// const Login = () => {
+  const [LoginEmail, setLoginEmail] = useState("");
+  const [LoginPassword, setLoginPassword] = useState("");
+  
+  const { login } = useContext(DataContext) 
 
-//     const [registerEmail , setRegisterEmail] = useState("")
-//     const [registerPassword , setRegisterPassword] = useState("")
-//     const [loginEmail , setLoginEmail] = useState("")
-//     const [loginPassword , setLoginPassword ] = useState("")
-//     const [user, setUser] = useState({})
+  const LoginpWithCredentials = () => {
 
-//     onAuthStateChanged(auth, (currentUser) => {
-//         setUser(currentUser);
-//       });
+    auth.signInWithEmailAndPassword(LoginEmail, LoginPassword)
+    .then((userCredential) => {
+
+      console.log(userCredential)
+      // Signed in 
+      var user = userCredential.user;
+      toast.success("User login Successfull!")
+      // ...
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      toast.error(error.message)
+      
+      // ..
+    });
+  
+  }
+    return(
+        <div className="loginForm">
+        <h3> Login User </h3>
+        <input
+          placeholder="Email..."
+          onChange={(e) => setLoginEmail(e.target.value)}
+        />
+        <br/>
+        <input
+          placeholder="Password..."
+          onChange={(e) => setLoginPassword(e.target.value)}
+        />
+         <br/>
+        <button onClick={(e)=>LoginpWithCredentials()}>
+            SigUp
+        </button>
     
+        <ToastContainer />
+        </div>
+    )
+}
 
-//     const register = async() => {
-//         try{
-//             const user = createUserWithEmailAndPassword(
-//                 auth,
-//                 registerEmail,
-//                 registerPassword)
-//             console.log(user)
-//         }catch(err){
-//             console.log(err.message)
-//         }
-//     }
-
-//     const login = async() => {
-//         try {
-//             const user = await signInWithEmailAndPassword(
-//                 auth,
-//                 loginEmail,
-//                 loginPassword
-//             )
-//         }catch(err){
-//             console.log(err.message)
-//         }
-
-//     }
-
-//     const logout = async() => {
-//         await signOut(auth);
-//     }
-
-// return(
-// <div className="App">
-// <div>
-//     <h3> Register User </h3>
-//     <input
-//     placeholder="Email..."
-//     onChange={(e) => setRegisterEmail(e.target.value)}
-//     />
-//     <input
-//     placeholder="Password..."
-//     onChange={(e) => setRegisterPassword(e.target.value)}
-//     />
-//     <button onClick={register} > Create User</button>
-//     </div>
-//     <div>
-//     <h3> Login </h3>
-//     <input
-//     placeholder="Email..."
-//     onChange={(e) => setLoginEmail(e.target.value)}
-//     />
-//     <input 
-//     placeholder="Password"
-//     onChange={(e) => setLoginPassword(e.target.value)}
-//     />
-//     <button onClick={login} >login</button>
-//     </div>
-//     <h4>User Logged in </h4>
-//     {user?.email}
-//     <button onClick={logout}> Sign out </button>
-// </div>
-//   )
-// };
-
-// export default Login;
-
-
-
-
-
-
-
+export default Login

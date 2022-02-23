@@ -2,7 +2,7 @@ import { BsFillHouseDoorFill } from "react-icons/bs";
 import { AiOutlineHistory } from "react-icons/ai";
 import { AiFillLike} from "react-icons/ai";
 import { MdOutlineWatchLater, MdPlaylistAddCheck } from "react-icons/md";
-import { FaUserAlt } from "react-icons/fa";
+import { Fa500Px, FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import DataContext from './Context/DataContext';
@@ -31,6 +31,7 @@ const Nav = () => {
        <li className = "list-items"> <Link className="icons" to = "later"><MdOutlineWatchLater/></Link> </li>
        <li className = "list-items"> <Link className="icons" to = "playlist"><MdPlaylistAddCheck/></Link></li>
        <li className = "list-items"> <Link className="icons" to = "liked">< AiFillLike/> </Link></li>
+       <li className = "list-items"> <Link className="icons" to = "register"><FaUserAlt/></Link></li>
   
      </ul>
     </nav>

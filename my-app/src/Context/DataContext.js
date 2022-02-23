@@ -2,6 +2,10 @@
 import {useState, useEffect } from 'react'
 import { createContext } from "react";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 const DataContext = createContext({})
@@ -113,10 +117,18 @@ export const DataProvider = ({children}) => {
     }
   
     const handleLikeList = (item) => {
-      setLikedList([...likedList , item])
+        if(likedList.includes(item)){
+            toast.error("Video is already added to liked videos")
+        }else{
+            setLikedList([...likedList , item])
+        }
+   
     }
     
     const handleWatchLater = (item) => {
+        if(watchedLater.includes(item)){
+            toast.error("Video is already added to watch later ")
+        }
       setaWatchedLater([...watchedLater , item])
     }
     
